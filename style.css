@@ -13,166 +13,58 @@ body{
     align-items:center;
 }
 
-/* INDEX MENU */
-
+/* CONTAINER (LUAR) */
 .container{
-    width:90%;
-    max-width:900px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
+/* CARD MENU */
 .menu-card{
     width:90%;
-    max-width:450px;
-    text-align:center;
+    max-width:400px;
     background:#fff;
-    padding:20px;
+    padding:25px;
     border-radius:20px;
+    text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-.menu-card{
-    width:90%;
-    max-width:450px;
-    text-align:center;
-    background:#fff;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+/* JUDUL */
+.menu-card h1{
+    margin-bottom:20px;
 }
 
+/* MENU BUTTON */
 .menu{
     display:flex;
-    flex-direction:column; /* ⬅️ ini kuncinya */
-    gap:10px;
+    flex-direction:column; /* jadi ke bawah */
+    gap:15px;
 }
 
 .menu a{
-    flex:1;
     text-decoration:none;
+    width:100%;
 }
 
+/* BUTTON */
 .menu button{
     width:100%;
-    height:70px;
-    border:none;
-    border-radius:20px;
-    background:#0d6efd;
-    color:white;
-    font-weight:bold;
-    font-size:16px;
-    padding:10px;
-}
-
-/* INPUT */
-
-input{
-    width:100%;
-    padding:12px;
-    margin:6px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-
-/* TOMBOL */
-
-button{
-    padding:12px 20px;
+    height:90px;
     border:none;
     border-radius:15px;
+    background:#0d6efd;
     color:white;
-    cursor:pointer;
+    font-weight:bold;
     font-size:15px;
-    font-weight:600;
-
-    display:inline-block;   /* ⬅️ penting */
-    width:32%;              /* ⬅️ biar 3 tombol sejajar */
+    cursor:pointer;
+    transition:.2s;
 }
 
-.btn-tambah{
-    background:#198754;
-}
-
-.btn-update{
-    background:#6c757d;
-}
-
-.btn-update.edit-mode{
-    background:#fd7e14;
-}
-
-.btn-reset{
-    background:#dc3545;
-}
-
-.btn-hapus{
-    background:#dc3545;
-}
-
-.btn-kembali{
-    background:#0d6efd;
-}
-
-.btn-edit{
-    background:#fd7e14;
-}
-
-/* TABLE */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
-}
-
-th{
-    background:#0d6efd;
-    color:white;
-}
-
-th,td{
-    border:1px solid #ddd;
-    padding:10px;
-    text-align:center;
-}
-
-/* STATUS */
-
-.status-lulus{
-    color:#198754;
-    font-weight:bold;
-}
-
-.status-remedial{
-    color:#dc3545;
-    font-weight:bold;
-}
-
-/* HASIL TABUNGAN */
-
-#hasilSaldo{
-    margin-top:15px;
-    padding:15px;
-    border-radius:10px;
-    background:#f8f9fa;
-    font-weight:bold;
-}
-
-#cardHasil {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #f8f9fa;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
-}
-.aksi{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:10px;
-}
-
-.aksi button{
-    flex:1 1 45%;
-    height:50px;
-    font-size:14px;
+/* HOVER */
+.menu button:hover{
+    background:#0b5ed7;
+    transform:scale(1.03);
 }

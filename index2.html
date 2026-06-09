@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nilai Siswa</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
@@ -14,22 +14,17 @@
   <h2>Daftar Nilai Siswa</h2>
 
   <input type="text" id="nama" placeholder="Nama Siswa">
-
   <input type="number" id="tugas" placeholder="Nilai Tugas">
-
   <input type="number" id="uts" placeholder="Nilai UTS">
-
   <input type="number" id="sas" placeholder="Nilai SAS">
 
-<div class="aksi">
-  <button class="btn-tambah" onclick="tambahData()">Tambah</button>
-  <button class="btn-update" onclick="updateData()">Update</button>
-  <button class="btn-reset" onclick="resetData()">Reset</button>
-</div>
+  <div class="aksi">
+    <button class="btn-tambah" onclick="tambahData()">Tambah</button>
+    <button class="btn-update" onclick="updateData()">Update</button>
+    <button class="btn-reset" onclick="resetData()">Reset</button>
+  </div>
 
-  <!-- TABEL DISEMBUNYIKAN DULU -->
   <div id="cardHasil" style="display:none;">
-
     <table>
       <thead>
         <tr>
@@ -43,11 +38,8 @@
           <th>Aksi</th>
         </tr>
       </thead>
-
       <tbody id="hasil"></tbody>
-
     </table>
-
   </div>
 
 </div>
