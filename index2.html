@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilai Siswa + Firebase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <h2>Daftar Nilai Siswa</h2>
+    
+    <input type="text" id="nama" placeholder="Nama Siswa">
+    
+    <input type="number" id="tugas" placeholder="Nilai Tugas">
+    
+    <input type="number" id="uts" placeholder="Nilai UTS">
+    
+    <input type="number" id="sas" placeholder="Nilai SAS">
+    
+<button class="btn-tambah" onclick="tambahData()">Tambah</button>
+
+<button class="btn-update" onclick="updateData()">Update</button>
+
+<button class="btn-reset" onclick="resetData()">Reset</button>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Tugas</th>
+          <th>UTS</th>
+          <th>SAS</th>
+          <th>Rata-rata</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      
+      <tbody id="hasil"></tbody>
+    </table>
+    
+   
+    
+  </div>
+  
+  <script type="module">
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+    
+    import {
+      getFirestore,
+      collection,
+      addDoc
+    }
+    from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyC_1XwbW-9zcNkRJXIQr4N1GgAyzQr6O2g",
+      authDomain: "uasgenap2026-549f7.firebaseapp.com",
+      projectId: "uasgenap2026-549f7",
+      storageBucket: "uasgenap2026-549f7.firebasestorage.app",
+      messagingSenderId: "560108074909",
+      appId: "1:560108074909:web:50c7719780334c88bee174",
+      measurementId: "G-E2WG6980GN"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    
+    window.simpanFirebase = async function(data) {
+      try {
+        await addDoc(
+          collection(db, "NilaiSiswa"),
+          data
+        );
+        
+        console.log("Data berhasil disimpan ke Firebase");
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  </script>
+  
+  <script src="main.js"></script>
+  
+</body>
+
+</html>
