@@ -10,44 +10,34 @@
 
 <body>
   
-  <div class="container">
+<div class="container">
     
     <h2>Buku Tabungan Siswa</h2>
     
     <input type="number" id="setoran" placeholder="Masukkan Setoran">
-    
-    <button class="btn-tambah" onclick="tambahSetoran()">
-      Tambah Setoran
-    </button>
-    
-    <button class="btn-hapus" onclick="hapusSetoran()">
-      Hapus Terakhir
-    </button>
-    
-    <button class="btn-reset" onclick="resetTabungan()">
-      Reset
-    </button>
-    
-    <button class="btn-update" onclick="cetakSaldo()">
-      Cetak Saldo
-    </button>
-    
+
+    <div class="aksi">
+        <button class="btn-tambah" onclick="tambahSetoran()">Tambah Setoran</button>
+        <button class="btn-hapus" onclick="hapusSetoran()">Hapus Terakhir</button>
+        <button class="btn-reset" onclick="resetTabungan()">Reset</button>
+        <button class="btn-update" onclick="cetakSaldo()">Cetak Saldo</button>
+    </div>
+
     <h3>Riwayat Setoran</h3>
     
     <table>
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Setoran</th>
-        </tr>
-      </thead>
-      
-      <tbody id="riwayat"></tbody>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Setoran</th>
+            </tr>
+        </thead>
+        <tbody id="riwayat"></tbody>
     </table>
-    
+
     <div id="hasilSaldo"></div>
-    
-    <br>
+
+</div>
 
     
   </div>

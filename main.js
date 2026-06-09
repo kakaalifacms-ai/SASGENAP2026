@@ -38,9 +38,11 @@ function tambahData() {
 }
 
 function tampilkanData() {
+
     let html = "";
-    
+
     dataSiswa.forEach((item, index) => {
+
         html += `
         <tr>
             <td>${index + 1}</td>
@@ -70,30 +72,13 @@ function tampilkanData() {
         </tr>
         `;
     });
-    
+
     document.getElementById("hasil").innerHTML = html;
-}
 
-function editData(index) {
-    indexEdit = index;
-    
-    document.getElementById("nama").value =
-        dataSiswa[index].nama;
-    
-    document.getElementById("tugas").value =
-        dataSiswa[index].tugas;
-    
-    document.getElementById("uts").value =
-        dataSiswa[index].uts;
-    
-    document.getElementById("sas").value =
-        dataSiswa[index].sas;
-    
-    document
-        .querySelector(".btn-update")
-        .classList.add("edit-mode");
+    // tampil/sembunyi tabel otomatis
+    document.getElementById("cardHasil").style.display =
+        dataSiswa.length > 0 ? "block" : "none";
 }
-
 function updateData() {
     if (indexEdit === -1) {
         alert("Pilih data yang akan diedit!");
@@ -129,8 +114,10 @@ function updateData() {
 }
 
 function hapusData(index) {
-    dataSiswa.splice(index, 1);
-    tampilkanData();
+    if (confirm("Yakin ingin menghapus data ini?")) {
+        dataSiswa.splice(index, 1);
+        tampilkanData();
+    }
 }
 
 function resetForm() {
@@ -148,6 +135,42 @@ function resetForm() {
 
 function resetData() {
     dataSiswa = [];
+    tampilkanData();
+    resetForm();
+
+    document.getElementById("cardHasil").style.display = "none";
+}
+
+function tambahData() {
+    const nama = document.getElementById("nama").value;
+    const tugas = Number(document.getElementById("tugas").value);
+    const uts = Number(document.getElementById("uts").value);
+    const sas = Number(document.getElementById("sas").value);
+    
+    if (
+        nama === "" ||
+        isNaN(tugas) ||
+        isNaN(uts) ||
+        isNaN(sas)
+    ) {
+        alert("Semua data harus diisi!");
+        return;
+    }
+    
+    const rata = (tugas + uts + sas) / 3;
+    const status = hitungStatus(rata);
+    
+    dataSiswa.push({
+        nama,
+        tugas,
+        uts,
+        sas,
+        rata: rata.toFixed(2),
+        status
+    });
+    
+    document.getElementById("cardHasil").style.display = "block";
+    
     tampilkanData();
     resetForm();
 }

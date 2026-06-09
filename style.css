@@ -8,6 +8,9 @@
 body{
     background:#f4f6f9;
     min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 /* INDEX MENU */
@@ -15,33 +18,49 @@ body{
 .container{
     width:90%;
     max-width:900px;
-    margin:30px auto;
+}
+
+.menu-card{
+    width:90%;
+    max-width:450px;
+    text-align:center;
     background:#fff;
     padding:20px;
-    border-radius:15px;
+    border-radius:20px;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
 .menu-card{
+    width:90%;
     max-width:450px;
-    margin:120px auto 0;
     text-align:center;
+    background:#fff;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-.menu-card h1{
-    margin-bottom:20px;
+.menu{
+    display:flex;
+    flex-direction:column; /* ⬅️ ini kuncinya */
+    gap:10px;
 }
 
-.menu-card button{
+.menu a{
+    flex:1;
+    text-decoration:none;
+}
+
+.menu button{
     width:100%;
-    margin:8px 0;
-    padding:12px;
+    height:70px;
     border:none;
-    border-radius:8px;
+    border-radius:20px;
     background:#0d6efd;
     color:white;
-    cursor:pointer;
+    font-weight:bold;
     font-size:16px;
+    padding:10px;
 }
 
 /* INPUT */
@@ -57,12 +76,16 @@ input{
 /* TOMBOL */
 
 button{
-    padding:10px 15px;
+    padding:12px 20px;
     border:none;
-    border-radius:8px;
+    border-radius:15px;
     color:white;
     cursor:pointer;
-    margin:4px;
+    font-size:15px;
+    font-weight:600;
+
+    display:inline-block;   /* ⬅️ penting */
+    width:32%;              /* ⬅️ biar 3 tombol sejajar */
 }
 
 .btn-tambah{
@@ -132,4 +155,24 @@ th,td{
     border-radius:10px;
     background:#f8f9fa;
     font-weight:bold;
+}
+
+#cardHasil {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+}
+.aksi{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+}
+
+.aksi button{
+    flex:1 1 45%;
+    height:50px;
+    font-size:14px;
 }
